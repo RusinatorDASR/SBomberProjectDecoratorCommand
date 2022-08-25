@@ -1,4 +1,4 @@
-
+ï»¿
 #include <conio.h>
 #include <windows.h>
 
@@ -139,7 +139,7 @@ void SBomber::CheckBombsAndGround()
     const double y = pGround->GetY();
     for (size_t i = 0; i < vecBombs.size(); i++)
     {
-        if (vecBombs[i]->GetY() >= y) // Ïåðåñå÷åíèå áîìáû ñ çåìëåé
+        if (vecBombs[i]->GetY() >= y) // ÐŸÐµÑ€ÐµÑÐµÑ‡ÐµÐ½Ð¸Ðµ Ð±Ð¾Ð¼Ð±Ñ‹ Ñ Ð·ÐµÐ¼Ð»ÐµÐ¹
         {
             pGround->AddCrater(vecBombs[i]->GetX());
             CheckDestoyableObjects(vecBombs[i]);
@@ -166,13 +166,13 @@ void SBomber::CheckDestoyableObjects(DynamicObject * pBomb)
     }
 }
 
-void CommandExecuter(AbstractCommand* pCommand) { //Äîáàâëåíà ôóíêöèÿ
+void CommandExecuter(AbstractCommand* pCommand) { //Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð° Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ
 	pCommand->Execute();
 	delete pCommand;
 }
 
 
-void SBomber::DeleteDynamicObj(DynamicObject* pObj) //Çàìåíåí âûçîâ êîìàíäû ñ èñïîëüçîâàíèåì ïàòòåðíà Êîìàíäà
+void SBomber::DeleteDynamicObj(DynamicObject* pObj) //Ð—Ð°Ð¼ÐµÐ½ÐµÐ½ Ð²Ñ‹Ð·Ð¾Ð² ÐºÐ¾Ð¼Ð°Ð½Ð´Ñ‹ Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸ÐµÐ¼ Ð¿Ð°Ñ‚Ñ‚ÐµÑ€Ð½Ð° ÐšÐ¾Ð¼Ð°Ð½Ð´Ð°
 {
     //auto it = vecDynamicObj.begin();
     //for (; it != vecDynamicObj.end(); it++)
@@ -188,7 +188,7 @@ void SBomber::DeleteDynamicObj(DynamicObject* pObj) //Çàìåíåí âûçîâ êîìàíäû ñ èñ
 	CommandExecuter(DelDynBombComm);
 }
 
-void SBomber::DeleteStaticObj(GameObject* pObj)  //Çàìåíåí âûçîâ êîìàíäû ñ èñïîëüçîâàíèåì ïàòòåðíà Êîìàíäà
+void SBomber::DeleteStaticObj(GameObject* pObj)  //Ð—Ð°Ð¼ÐµÐ½ÐµÐ½ Ð²Ñ‹Ð·Ð¾Ð² ÐºÐ¾Ð¼Ð°Ð½Ð´Ñ‹ Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸ÐµÐ¼ Ð¿Ð°Ñ‚Ñ‚ÐµÑ€Ð½Ð° ÐšÐ¾Ð¼Ð°Ð½Ð´Ð°
 {
     //auto it = vecStaticObj.begin();
     //for (; it != vecStaticObj.end(); it++)
@@ -368,7 +368,7 @@ void SBomber::TimeFinish()
 	FileLoggerSingleton::getInstance().WriteToLog(string(__FUNCTION__) + " deltaTime = ", (int)deltaTime);
 }
 
-void SBomber::DropBomb()  //Çàìåíåí âûçîâ êîìàíäû ñ èñïîëüçîâàíèåì ïàòòåðíà Êîìàíäà, äîáàâëåíà íîâàÿ áîìáà, âûçûâàåìàÿ ðàíäîìíî, èñïîëüçóåòñÿ ïàòòåðí Äåêîðàòîð
+void SBomber::DropBomb()  //Ð—Ð°Ð¼ÐµÐ½ÐµÐ½ Ð²Ñ‹Ð·Ð¾Ð² ÐºÐ¾Ð¼Ð°Ð½Ð´Ñ‹ Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸ÐµÐ¼ Ð¿Ð°Ñ‚Ñ‚ÐµÑ€Ð½Ð° ÐšÐ¾Ð¼Ð°Ð½Ð´Ð°, Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð° Ð½Ð¾Ð²Ð°Ñ Ð±Ð¾Ð¼Ð±Ð°, Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÐ¼Ð°Ñ Ñ€Ð°Ð½Ð´Ð¾Ð¼Ð½Ð¾, Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ÑÑ Ð¿Ð°Ñ‚Ñ‚ÐµÑ€Ð½ Ð”ÐµÐºÐ¾Ñ€Ð°Ñ‚Ð¾Ñ€
 {
     if (bombsNumber > 0)
     {

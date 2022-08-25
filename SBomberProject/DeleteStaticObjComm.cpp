@@ -1,4 +1,4 @@
-#include "DeleteStaticObjComm.h"
+﻿#include "DeleteStaticObjComm.h"
 #include "SBomber.h"
 #include <vector>
 using namespace std;
